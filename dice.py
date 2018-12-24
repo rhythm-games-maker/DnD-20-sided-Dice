@@ -30,7 +30,6 @@ class Button:
     def __init__(self):
         self.x = 200
         self.y = 325
-        
         self.image = 'rollBtn.png'
         self.button = Image(Point(self.x,self.y), self.image)
         self.text = Text(Point(self.x,self.y), 'ROLL')
@@ -44,12 +43,8 @@ class Button:
 
     def collide(self,wn):
         mouse = wn.getMouse()
-        mx = mouse.x
-        my = mouse.y
-        
-        dx = abs(self.x - mx)
-        dy = abs(self.y - my)
-
+        dx = abs(self.x - mouse.x)
+        dy = abs(self.y - mouse.y)
         if dx < 40 and dy < 30:
             return True
         
@@ -70,5 +65,5 @@ def main():
         torf = rollBtn.collide(wn)
         if torf == True:
             myDice.roll()
-            myDice.set()        
+            myDice.set()
 main()
