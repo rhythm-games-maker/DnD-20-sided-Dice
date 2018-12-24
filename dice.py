@@ -2,12 +2,13 @@ from graphics import *
 from random import randint
 
 class Dice:
-    def __init__(self, x, y):
+    def __init__(self, x = 200, y = 200):
         self.position = Point(x,y)
+        self.numberPosition = Point(197, 193)
         self.image = 'dice.png'
         self.number = ''
         self.dice = Image(self.position, self.image)
-        self.luckyNumber = Text(self.position, self.number)
+        self.luckyNumber = Text(self.numberPosition, self.number)
 
     def create(self, wn):
         self.luckyNumber.setSize(20)
@@ -32,7 +33,7 @@ def main():
 
     wn = GraphWin(name, width,height)
 
-    myDice = Dice(200,150)
+    myDice = Dice()
     myDice.create(wn)
 
     while True:
