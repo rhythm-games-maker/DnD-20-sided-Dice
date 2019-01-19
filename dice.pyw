@@ -26,9 +26,7 @@ class Dice:
         self.luckyNumber.setText(self.number)
         return
 
-    def roll(self):
-        pass
-    
+
 class Button:
     def __init__(self):
         self.x = 200
